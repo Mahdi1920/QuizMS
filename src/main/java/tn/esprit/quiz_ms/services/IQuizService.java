@@ -9,8 +9,8 @@ import java.util.Optional;
 public interface IQuizService {
 	public Quiz addQuiz(Quiz quiz);
 	public Quiz updateQuiz(Quiz quiz);
-	public Optional<Quiz> retrieveQuiz(long idQuiz);
+	public Optional<Quiz> retrieveQuiz(String idQuiz);
 	public List<Quiz> retrieveAllQuizs();
-	void removeQuiz (long idQuiz);
+	void removeQuiz (String idQuiz);
 
 }

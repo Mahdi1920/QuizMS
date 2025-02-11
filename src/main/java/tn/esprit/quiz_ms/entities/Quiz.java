@@ -2,6 +2,7 @@ package tn.esprit.quiz_ms.entities;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -16,7 +17,7 @@ import java.time.LocalDate;
 public class Quiz implements Serializable {
 	@Id
 	@Setter(AccessLevel.NONE)
-	long idQuiz;
+	String idQuiz;
 	String titreQuiz;
 	String specialite;
 	LocalDate dateQuiz ;

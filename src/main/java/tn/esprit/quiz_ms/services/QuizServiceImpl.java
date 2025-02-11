@@ -23,7 +23,7 @@ public class QuizServiceImpl implements IQuizService{
 	}
 
 	@Override
-	public Optional<Quiz> retrieveQuiz(long idQuiz) {
+	public Optional<Quiz> retrieveQuiz(String idQuiz) {
 		return quizRepository.findById(idQuiz);
 	}
 
@@ -33,7 +33,7 @@ public class QuizServiceImpl implements IQuizService{
 	}
 
 	@Override
-	public void removeQuiz(long idQuiz) {
+	public void removeQuiz(String idQuiz) {
 		quizRepository.deleteById(idQuiz);
 	}
 }
