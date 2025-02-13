@@ -1,16 +1,10 @@
 package tn.esprit.quiz_ms.services;
 
+import org.bson.types.ObjectId;
 import tn.esprit.quiz_ms.entities.Quiz;
-import tn.esprit.quiz_ms.repositories.QuizRepository;
+import tn.starter.shared.services.IGenericService;
 
-import java.util.List;
-import java.util.Optional;
+public interface IQuizService extends IGenericService<Quiz, ObjectId> {
 
-public interface IQuizService {
-	public Quiz addQuiz(Quiz quiz);
-	public Quiz updateQuiz(Quiz quiz);
-	public Optional<Quiz> retrieveQuiz(String idQuiz);
-	public List<Quiz> retrieveAllQuizs();
-	void removeQuiz (String idQuiz);
 
 }

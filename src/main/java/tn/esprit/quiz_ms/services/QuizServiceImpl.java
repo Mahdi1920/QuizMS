@@ -1,39 +1,38 @@
 package tn.esprit.quiz_ms.services;
 
-import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
 import tn.esprit.quiz_ms.entities.Quiz;
 import tn.esprit.quiz_ms.repositories.QuizRepository;
-
 import java.util.List;
-import java.util.Optional;
 
 @Service
-@NoArgsConstructor
+@AllArgsConstructor
 public class QuizServiceImpl implements IQuizService{
-	QuizRepository quizRepository;
+	private QuizRepository quizRepository;
 	@Override
-	public Quiz addQuiz(Quiz quiz) {
+	public Quiz add(Quiz quiz) {
 		return quizRepository.save(quiz);
 	}
 
 	@Override
-	public Quiz updateQuiz(Quiz quiz) {
+	public Quiz update(Quiz quiz) {
 		return quizRepository.save(quiz);
 	}
 
 	@Override
-	public Optional<Quiz> retrieveQuiz(String idQuiz) {
-		return quizRepository.findById(idQuiz);
+	public Quiz retrieveById(ObjectId s) {
+		return quizRepository.findById(s).orElse(null);
 	}
 
 	@Override
-	public List<Quiz> retrieveAllQuizs() {
+	public List<Quiz> retrieveAll() {
 		return quizRepository.findAll();
 	}
 
 	@Override
-	public void removeQuiz(String idQuiz) {
-		quizRepository.deleteById(idQuiz);
+	public void delete(ObjectId s) {
+		quizRepository.deleteById(s);
 	}
 }

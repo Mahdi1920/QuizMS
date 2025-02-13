@@ -1,7 +1,6 @@
 package tn.esprit.quiz_ms.controllers;
 
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.quiz_ms.entities.Quiz;
@@ -11,28 +10,28 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@NoArgsConstructor
+@AllArgsConstructor
 @RequestMapping("/api/Quiz")
 public class QuizController {
 	IQuizService quizService;
-	@PostMapping("/addQuiz") 
+	@PostMapping("/addQuiz")
 	public Quiz addQuiz(@RequestBody Quiz quiz) {
-		return quizService.addQuiz(quiz);
+		return quizService.add(quiz);
 	}
 	@PutMapping("/putQuiz")
 	public Quiz updateQuiz(@RequestBody Quiz quiz) {
-		return quizService.updateQuiz(quiz);
+		return quizService.update(quiz);
 	}
 	@GetMapping("/getQuizById/{idQuiz}")
-	public Optional<Quiz> retrieveQuiz(@PathVariable String idQuiz) {
-		return quizService.retrieveQuiz(idQuiz);
+	public Quiz retrieveQuiz(@PathVariable ObjectId idQuiz) {
+		return quizService.retrieveById(idQuiz);
 	}
 	@GetMapping("/GetQuizs")
 	public List<Quiz> retrieveAllQuizs() {
-		return quizService.retrieveAllQuizs();
+		return quizService.retrieveAll();
 	}
 	@DeleteMapping("/deleteQuiz/{idQuiz}")
-	public void removeQuiz(@PathVariable String idQuiz) {
-		quizService.removeQuiz(idQuiz);
+	public void removeQuiz(@PathVariable ObjectId idQuiz) {
+		quizService.delete(idQuiz);
 	}
 }
