@@ -1,38 +1,12 @@
 package tn.esprit.quiz_ms.services;
 
 import lombok.AllArgsConstructor;
-import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
+import tn.esprit.quiz_ms.entities.Quiz;
 import tn.starter.mongoShared.dto.QuizDTO;
-
-import java.util.List;
+import tn.starter.mongoShared.services.IGenericServiceImpl;
 
 @Service
 @AllArgsConstructor
-public class QuizServiceImpl implements IQuizService{
-
-	@Override
-	public QuizDTO add(QuizDTO quizDTO) {
-		return null;
-	}
-
-	@Override
-	public QuizDTO update(QuizDTO quizDTO) {
-		return null;
-	}
-
-	@Override
-	public QuizDTO retrieveById(ObjectId objectId) {
-		return null;
-	}
-
-	@Override
-	public List<QuizDTO> retrieveAll() {
-		return List.of();
-	}
-
-	@Override
-	public void delete(ObjectId objectId) {
-
-	}
+public class QuizServiceImpl extends IGenericServiceImpl<QuizDTO, Quiz> implements IQuizService{
 }
