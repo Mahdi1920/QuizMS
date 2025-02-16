@@ -32,7 +32,7 @@
     <dependencies>
         <dependency>
             <groupId>tn.starter</groupId>
-            <artifactId>shared</artifactId>
+            <artifactId>MongoShared</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>

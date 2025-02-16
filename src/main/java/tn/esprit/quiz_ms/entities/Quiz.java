@@ -3,7 +3,7 @@ package tn.esprit.quiz_ms.entities;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.data.mongodb.core.mapping.Document;
-import tn.starter.shared.entities.MongoBaseEntity;
+import tn.starter.mongoShared.entities.BaseEntity;
 
 import java.time.LocalDate;
 
@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Quiz extends MongoBaseEntity {
+public class Quiz extends BaseEntity {
 	String titreQuiz;
 	String specialite;
 	LocalDate dateQuiz ;
